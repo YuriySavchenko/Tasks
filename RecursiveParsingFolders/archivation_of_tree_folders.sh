@@ -13,7 +13,7 @@ touch tree_file_system.txt
 # condition for empty variable
 if [[ -z $root ]]; 
 then
-    echo . >> tree_file_system.txt
+    echo $(pwd) >> tree_file_system.txt
 else
     echo $root >> tree_file_system.txt
 fi
@@ -26,6 +26,12 @@ function deep_descent {
     level=$(expr $level + 4)
 
     local dir=$1
+
+    if [[ -z $dir ]];
+    then
+        dir=$(pwd)
+    fi
+
     local items=$(ls -1 $dir)
 
     # save variable { Internal Field Separator } to another variable
