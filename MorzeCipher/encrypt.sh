@@ -40,7 +40,7 @@ else
         done
         
         # writing to the output file a separator between the words
-        echo -n "    " >> $2
+        echo -n "	" >> $2
     done
 
     # writing to the output file end of the line
